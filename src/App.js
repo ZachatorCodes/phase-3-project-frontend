@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Trails from "./components/Trails";
 
 function App() {
-  const [trails, setTrails] = useState(null);
+  const [trails, setTrails] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:9292/trails")
