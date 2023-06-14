@@ -1,9 +1,22 @@
 import React from "react";
+import BuildTrail from "./BuildTrail";
 
-function Trails() {
+function Trails({ trails }) {
   return (
     <div className="Trails">
-      <h1>Trails</h1>
+      {trails.map((trail) => {
+        return (
+          <BuildTrail
+            key={trail.id}
+            trailID={trail.id}
+            trailName={trail.trail_name}
+            length={trail.length}
+            elevation={trail.elevation}
+            location={trail.location}
+            difficulty={trail.difficulty}
+          />
+        );
+      })}
     </div>
   );
 }
