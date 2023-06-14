@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
+import Trails from "./components/Trails";
 
 function App() {
   const [trails, setTrails] = useState(null);
@@ -16,6 +17,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Trails trails={trails}/>
     </div>
   );
 }
