@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Header from "./components/Header";
 
 function App() {
   const [trails, setTrails] = useState(null);
@@ -11,6 +12,12 @@ function App() {
         setTrails(data);
       });
   }, []);
+
+  return (
+    <div className="App">
+      <Header />
+    </div>
+  );
 }
 
 export default App;
