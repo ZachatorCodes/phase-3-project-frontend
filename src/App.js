@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Trails from "./components/Trails";
+import TrailForm from "./components/TrailForm";
 
 function App() {
   const [trails, setTrails] = useState([]);
@@ -17,6 +18,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <TrailForm />
       <Trails trails={trails}/>
     </div>
   );
