@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Trails from "./components/Trails";
 import TrailForm from "./components/TrailForm";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   const [trails, setTrails] = useState([]);
@@ -21,9 +22,13 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <TrailForm onAddTrail={handleAddTrail} />
-      <Trails trails={trails} />
+      <Switch>
+        <Route path="/">
+          <Header />
+          <TrailForm onAddTrail={handleAddTrail} />
+          <Trails trails={trails} />
+        </Route>
+      </Switch>
     </div>
   );
 }
