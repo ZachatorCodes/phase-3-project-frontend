@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function TrailForm() {
+function TrailForm({ onAddTrail }) {
   const [trailInfo, setTrailInfo] = useState({
     trail_name: "",
     length: "",
@@ -13,6 +13,23 @@ function TrailForm() {
     e.preventDefault();
     console.log("Form Submitted");
     console.log(trailInfo);
+    console.log("Fetching...");
+    fetch("http://localhost:9292/trails", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(trailInfo),
+    })
+      .then((r) => r.json())
+      .then((data) => onAddTrail(data));
+    setTrailInfo({
+      trail_name: "",
+      length: "",
+      elevation: "",
+      location: "",
+      difficulty: "",
+    });
   }
 
   function handleChange(e) {
