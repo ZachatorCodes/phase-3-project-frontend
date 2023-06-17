@@ -15,11 +15,15 @@ function App() {
       });
   }, []);
 
+  function handleAddTrail(newTrail) {
+    setTrails([...trails, newTrail]);
+  }
+
   return (
     <div className="App">
       <Header />
-      <TrailForm />
-      <Trails trails={trails}/>
+      <TrailForm onAddTrail={handleAddTrail} />
+      <Trails trails={trails} />
     </div>
   );
 }
