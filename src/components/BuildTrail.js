@@ -1,7 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function BuildTrail({ trailID, trailName, length, elevation, location, difficulty, onDeleteTrail }) {
+function BuildTrail({
+  trailID,
+  trailName,
+  length,
+  elevation,
+  location,
+  difficulty,
+  onDeleteTrail,
+}) {
   function handleDeleteClick() {
     console.log(trailID);
     fetch(`http://localhost:9292/trails/${trailID}`, {
@@ -20,6 +28,9 @@ function BuildTrail({ trailID, trailName, length, elevation, location, difficult
       <p>Difficulty: {difficulty}</p>
       <Link to={`/reviews/${trailID}`}>
         <button>See Reviews</button>
+      </Link>
+      <Link to={`/update/${trailID}`}>
+        <button>Edit Trail</button>
       </Link>
       <button onClick={handleDeleteClick}>Delete Trail</button>
     </div>
