@@ -35,7 +35,7 @@ function App() {
           <Trails trails={trails} onDeleteTrail={handleDeleteTrail} />
         </Route>
         <Route path="/reviews/:id">
-          <Reviews />
+          <Reviews trails={trails}/>
         </Route>
       </Switch>
     </div>
