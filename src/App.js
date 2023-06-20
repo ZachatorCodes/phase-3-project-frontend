@@ -4,6 +4,7 @@ import Trails from "./components/Trails";
 import TrailForm from "./components/TrailForm";
 import { Route, Switch } from "react-router-dom";
 import Reviews from "./components/Reviews";
+import UpdateTrail from "./components/UpdateTrail";
 
 function App() {
   const [trails, setTrails] = useState([]);
@@ -36,6 +37,9 @@ function App() {
         </Route>
         <Route path="/reviews/:id">
           <Reviews trails={trails}/>
+        </Route>
+        <Route path="/update/:id">
+          <UpdateTrail />
         </Route>
       </Switch>
     </div>
