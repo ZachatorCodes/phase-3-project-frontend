@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function BuildTrail({ trailID, trailName, length, elevation, location, difficulty }) {
   return (
@@ -8,6 +9,8 @@ function BuildTrail({ trailID, trailName, length, elevation, location, difficult
       <p>Elevation Gain: {elevation} feet</p>
       <p>Location: {location}</p>
       <p>Difficulty: {difficulty}</p>
+      <Link to={`/reviews/${trailID}`}><button>See Reviews</button></Link>
+      <button>Delete Trail</button>
     </div>
   );
 }
