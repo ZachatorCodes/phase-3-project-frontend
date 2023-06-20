@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import BuildReview from "./BuildReview";
+import ReviewForm from "./ReviewForm";
 
 function Reviews({ trails }) {
   const { id } = useParams();
@@ -21,6 +22,7 @@ function Reviews({ trails }) {
           );
         })}
       </div>
+      <ReviewForm />
     </>
   );
 }
