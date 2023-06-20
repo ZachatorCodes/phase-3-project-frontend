@@ -23,7 +23,20 @@ function App() {
   }
 
   function handleDeleteTrail(deletedTrail) {
-    const updatedTrails = trails.filter(trail => trail.id !== deletedTrail.id);
+    const updatedTrails = trails.filter(
+      (trail) => trail.id !== deletedTrail.id
+    );
+    setTrails(updatedTrails);
+  }
+
+  function handleUpdateTrail(updatedTrail) {
+    const updatedTrails = trails.map((trail) => {
+      if (updatedTrail.id === trail.id) {
+        return updatedTrail;
+      } else {
+        return trail;
+      }
+    });
     setTrails(updatedTrails);
   }
 
@@ -36,10 +49,10 @@ function App() {
           <Trails trails={trails} onDeleteTrail={handleDeleteTrail} />
         </Route>
         <Route path="/reviews/:id">
-          <Reviews trails={trails}/>
+          <Reviews trails={trails} />
         </Route>
         <Route path="/update/:id">
-          <UpdateTrail trails={trails}/>
+          <UpdateTrail trails={trails} onUpdateTrail={handleUpdateTrail}/>
         </Route>
       </Switch>
     </div>
