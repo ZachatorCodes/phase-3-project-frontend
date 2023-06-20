@@ -1,13 +1,16 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import BuildReview from "./BuildReview";
 
-function Reviews() {
-
-  const {id} = useParams();
-  console.log(id);
+function Reviews({ trails }) {
+  const { id } = useParams();
+  const specificTrail = trails.find((trail) => trail.id === parseInt(id));
   return (
     <div className="Reviews">
-      <h1>{id}</h1>
+      {specificTrail.reviews.map((review) => {
+        console.log(review)
+        return <BuildReview key={review.id}/>;
+      })}
     </div>
   );
 }
