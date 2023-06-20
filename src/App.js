@@ -39,7 +39,7 @@ function App() {
           <Reviews trails={trails}/>
         </Route>
         <Route path="/update/:id">
-          <UpdateTrail />
+          <UpdateTrail trails={trails}/>
         </Route>
       </Switch>
     </div>
