@@ -22,7 +22,7 @@ function App() {
   }
 
   function handleDeleteTrail(deletedTrail) {
-    updatedTrails = trails.filter(trail => trail.id !== deletedTrail.id);
+    const updatedTrails = trails.filter(trail => trail.id !== deletedTrail.id);
     setTrails(updatedTrails);
   }
 
@@ -32,7 +32,7 @@ function App() {
         <Route path="/" exact>
           <Header />
           <TrailForm onAddTrail={handleAddTrail} />
-          <Trails trails={trails} />
+          <Trails trails={trails} onDeleteTrail={handleDeleteTrail} />
         </Route>
         <Route path="/reviews/:id">
           <Reviews />
