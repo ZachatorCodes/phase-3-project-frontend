@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Trails from "./components/Trails";
 import TrailForm from "./components/TrailForm";
 import { Route, Switch } from "react-router-dom";
+import Reviews from "./components/Reviews";
 
 function App() {
   const [trails, setTrails] = useState([]);
@@ -20,13 +21,21 @@ function App() {
     setTrails([...trails, newTrail]);
   }
 
+  function handleDeleteTrail(deletedTrail) {
+    updatedTrails = trails.filter(trail => trail.id !== deletedTrail.id);
+    setTrails(updatedTrails);
+  }
+
   return (
     <div className="App">
       <Switch>
-        <Route path="/">
+        <Route path="/" exact>
           <Header />
           <TrailForm onAddTrail={handleAddTrail} />
           <Trails trails={trails} />
+        </Route>
+        <Route path="/reviews/:id">
+          <Reviews />
         </Route>
       </Switch>
     </div>
