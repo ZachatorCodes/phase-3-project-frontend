@@ -1,7 +1,7 @@
 import React from "react";
 import BuildTrail from "./BuildTrail";
 
-function Trails({ trails }) {
+function Trails({ trails, onDeleteTrail }) {
   return (
     <div className="Trails">
       {trails.map((trail) => {
@@ -14,6 +14,7 @@ function Trails({ trails }) {
             elevation={trail.elevation}
             location={trail.location}
             difficulty={trail.difficulty}
+            onDeleteTrail={onDeleteTrail}
           />
         );
       })}
