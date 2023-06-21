@@ -6,6 +6,10 @@
   text-align: center;
 }
 
+.ReviewForm {
+  text-align: center;
+}
+
 input, form button {
   margin: 0 10px;
 }
