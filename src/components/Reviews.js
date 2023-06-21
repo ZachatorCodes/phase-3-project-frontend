@@ -9,6 +9,8 @@ function Reviews({ trails }) {
   return (
     <>
       <h1 className="Header">Reviews for {specificTrail.trail_name}</h1>
+      <h3>Add a new review</h3>
+      <ReviewForm />
       <div className="Reviews">
         {specificTrail.reviews.map((review) => {
           console.log(review);
@@ -22,7 +24,6 @@ function Reviews({ trails }) {
           );
         })}
       </div>
-      <ReviewForm />
     </>
   );
 }
