@@ -55,14 +55,16 @@ function TrailForm({ onAddTrail }) {
           value={trailInfo.trail_name}
         ></input>
         <input
-          type="text"
+          type="number"
+          min="0"
           placeholder="Length"
           name="length"
           onChange={handleChange}
           value={trailInfo.length}
         ></input>
         <input
-          type="text"
+          type="number"
+          min="0"
           placeholder="Elevation Gain"
           name="elevation"
           onChange={handleChange}
