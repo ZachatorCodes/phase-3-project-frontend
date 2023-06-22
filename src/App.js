@@ -40,6 +40,21 @@ function App() {
     setTrails(updatedTrails);
   }
 
+  function handleAddReview(newReview) {
+    const trailToReview = trails.find(
+      (trail) => trail.id === newReview.trail_id
+    );
+    trailToReview.reviews.push(newReview);
+    const updatedTrails = trails.map((trail) => {
+      if (trail.id === trailToReview.id) {
+        return trailToReview;
+      } else {
+        return trail;
+      }
+    });
+    setTrails(updatedTrails);
+  }
+
   return (
     <div className="App">
       <Switch>
@@ -49,7 +64,7 @@ function App() {
           <Trails trails={trails} onDeleteTrail={handleDeleteTrail} />
         </Route>
         <Route path="/reviews/:id">
-          <Reviews trails={trails} />
+          <Reviews trails={trails} onAddReview={handleAddReview} />
         </Route>
         <Route path="/update/:id">
           <UpdateTrail trails={trails} onUpdateTrail={handleUpdateTrail} />
