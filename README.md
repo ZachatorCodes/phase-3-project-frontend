@@ -1,6 +1,17 @@
-# Getting Started with Create React App
+# Bunk Trail Reviews
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bunk Trail Reviews is a web application that can be used to store information about specific outdoor use trails, as well as associated reviews of those trails.
+
+
+## Installation
+
+- In order to install the application, please `fork` and `clone` this repository to your local device.
+
+- In order to start the application, please make sure you are in the project directory, then run `npm start`.
+
+- If an error is encountered running `npm start`, please run `npm install` to install the required dependencies, then try running `npm start` once more.
+
+- To make sure that the backend of the application works, you must fork and clone the [backend repository](https://github.com/ZachatorCodes/phase-3-project-backend), and then start the server with using the `bundle exec rake server` command. Further instructions for installing the database can be found in the README file of the [backend repository](https://github.com/ZachatorCodes/phase-3-project-backend).
 
 ## Available Scripts
 
