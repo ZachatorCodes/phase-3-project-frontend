@@ -2,6 +2,7 @@
 
 Bunk Trail Reviews is a web application that can be used to store information about specific outdoor use trails, as well as associated reviews of those trails.
 
+This is the frontend portion of the application. The backend portion of the application can be found [here](https://github.com/ZachatorCodes/phase-3-project-backend).
 
 ## Installation
 
